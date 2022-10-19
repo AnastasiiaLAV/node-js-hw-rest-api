@@ -32,3 +32,7 @@ PUT /api/contacts 2022-10-12_09:28:14
 POST /api/contacts/2 2022-10-12_09:46:54
 POST /api/contacts/1 2022-10-12_09:48:33
 POST /api/contacts/2 2022-10-12_09:48:38
+GET /api/contacts/634b24e9041e64f5b50b4b46 2022-10-19_09:06:32
+PUT /api/contacts/635037d207bd0b7a485f46fd 2022-10-19_09:16:10
+PATCH /api/contacts/634b24e9041e64f5b50b4b4b 2022-10-19_09:45:25
+PATCH /api/contacts/634b24e9041e64f5b50b4b4b/ 2022-10-19_09:45:52
