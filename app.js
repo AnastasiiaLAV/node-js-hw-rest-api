@@ -1,8 +1,16 @@
 const express = require('express')
+
 const logger = require('morgan')
+
 const cors = require('cors')
+
 const fs = require('fs/promises')
+
 const moment = require('moment')
+
+const dotenv = require('dotenv')
+
+dotenv.config()
 
 const contactsRouter = require('./routes/api/contacts')
 
@@ -34,3 +42,8 @@ app.use((err, req, res, next) => {
 })
 
 module.exports = app
+
+
+
+// X9y7WIxifRhJoBke   пароль
+// Nastia     username
