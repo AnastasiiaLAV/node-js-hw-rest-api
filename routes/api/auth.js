@@ -13,7 +13,7 @@ const router = express.Router()
 
 router.post('/singup', validateBody(schemas.registerSchema), ctrlWrapp(ctrl.register))
 
-// router.post('/login', validateBody(schemas.registerSchema), ctrlWrapp(ctrl.register))
+router.post('/login', validateBody(schemas.loginSchema), ctrlWrapp(ctrl.login))
 
 // router.get('/logout', validateBody(schemas.registerSchema), ctrlWrapp(ctrl.register))
 
