@@ -37,11 +37,6 @@ const userSchema = new Schema({
         default: null,
     },
 
-    // owner: {
-    //     type: SchemaTypes.ObjectId,
-    //     ref: 'user',
-    //   }
-
 }, {versionKey:false, timeseries:true})
 
 userSchema.post("save", handlerSaveError)

@@ -17,8 +17,6 @@ router.post('/login', validateBody(schemas.loginSchema), ctrlWrapp(ctrl.login))
 
 // router.get('/logout', validateBody(schemas.registerSchema), ctrlWrapp(ctrl.register))
 
-// router.get('/current', validateBody(schemas.registerSchema), ctrlWrapp(ctrl.register))
-
 // router.patch('/users', isValidId, validateBody(schemas.), ctrlWrapp(ctrl.))   //////subscription ['starter', 'pro', 'business']
 
 module.exports = router;
