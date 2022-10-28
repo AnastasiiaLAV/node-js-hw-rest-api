@@ -34,7 +34,7 @@ const userSchema = new Schema({
 
     token: {
         type: String,
-        default: null,
+        default: "",
     },
 
 }, {versionKey:false, timeseries:true})
@@ -53,11 +53,15 @@ const registerSchema = Joi.object({
 const loginSchema = Joi.object({
     email: Joi.string().pattern(patternEmail).required(),
     password: Joi.string().min(6).required(),
-}
-)
+})
+
+const subscriptionSchema = Joi.object({
+    subscription: Joi.string().valid("starter", "pro", "business").required(),
+});
 const schemas = {
     registerSchema,
     loginSchema,
+    subscriptionSchema,
 }
 
 module.exports ={

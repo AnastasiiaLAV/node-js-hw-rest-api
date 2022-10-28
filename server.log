@@ -38,3 +38,15 @@ PATCH /api/contacts/634b24e9041e64f5b50b4b4b 2022-10-19_09:45:25
 PATCH /api/contacts/634b24e9041e64f5b50b4b4b/ 2022-10-19_09:45:52
 GET /api/auth 2022-10-22_08:31:20
 GET /api/auth/ 2022-10-22_08:31:30
+GET /api/user/current 2022-10-27_07:41:51
+GET /api/user/current 2022-10-27_07:42:29
+GET /api/user/current 2022-10-27_07:46:08
+POST /api/auth/logout 2022-10-28_08:27:53
+POST /api/auth/logout 2022-10-28_08:28:49
+GET /api/auth/subscrip 2022-10-28_09:27:32
+POST /api/auth/subscrip 2022-10-28_09:27:41
+GET /api/auth/subscrip 2022-10-28_10:02:30
+GET /api/auth/subscrip 2022-10-28_10:04:03
+GET /api/auth/subscrip 2022-10-28_10:04:08
+GET /api/auth/subscrip 2022-10-28_10:05:27
+PATCH /api/auth/subscrip/635c0dbbd82a3c1c226bde3a 2022-10-28_10:17:10

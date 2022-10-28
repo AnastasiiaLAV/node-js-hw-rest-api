@@ -4,9 +4,9 @@ const {ctrlWrapp} = require('../../helpers')
 
 const {schemas} = require('../../models/user')
 
-const ctrl = require('../../controllers/auth/index')
+const ctrl = require('../../controllers/auth')
 
-const {validateBody} = require('../../middlewares')
+const {validateBody, userCurrent} = require('../../middlewares')
 
 
 const router = express.Router()
@@ -15,8 +15,11 @@ router.post('/singup', validateBody(schemas.registerSchema), ctrlWrapp(ctrl.regi
 
 router.post('/login', validateBody(schemas.loginSchema), ctrlWrapp(ctrl.login))
 
-// router.get('/logout', validateBody(schemas.registerSchema), ctrlWrapp(ctrl.register))
+router.get("/current", userCurrent, ctrlWrapp(ctrl.getCurrent))
 
-// router.patch('/users', isValidId, validateBody(schemas.), ctrlWrapp(ctrl.))   //////subscription ['starter', 'pro', 'business']
+router.get("/logout", userCurrent, ctrlWrapp(ctrl.logout))
+
+router.patch('/subscrip', userCurrent, validateBody(schemas.subscriptionSchema), ctrlWrapp(ctrl.updateSubscription))
+
 
 module.exports = router;
