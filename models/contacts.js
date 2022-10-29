@@ -28,6 +28,12 @@ const contactSchema = new Schema({
     default: false,
   },
 
+  owner: {
+    type: Schema.Types.ObjectId,
+    ref: 'user',
+    required: true,
+  }
+
 }, {versionKey: false, timestamps: true}) 
 
 contactSchema.post("save", handlerSaveError)
