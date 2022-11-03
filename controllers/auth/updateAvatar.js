@@ -1,31 +1,40 @@
 const {User} = require('../../models/user')
 
-const {RequestError} = require("../../helpers")
-
 const path = require('path')
 
 const fs = require('fs/promises')
 
+const Jimp = require('jimp');
 
-const avaDir = path.join(__dirname, "../../", "public", "avatar")
+
+const avaDir = path.join(__dirname, "../../", 'public/avatars')
 
 const updateAvatar = async(req,res) => {
-    const {path: tmpUpload, originalname} = req.file
-    try {
-        const resultUpload = path.join(avaDir, originalname)
+    const { _id } = req.user;
 
-        await fs.rename(tmpUpload, resultUpload)
+    const { path: tempUpload, originalname } = req.file;
 
-        const avatarURL = path.join("public", "avatars", originalname)
+    const extention = originalname.split('.').pop();
 
-        await User.findByIdAndUpdate(req.user._id, {avatarURL})
+    const fileName = `${_id}.${extention}`;
 
-        req.status(200).json({avatarURL})
+        Jimp.read(tempUpload, (err, file) => {
+        if (err) throw err;
+        file
+            .resize(250, 250) 
+            .quality(60) 
+            .write(`./public/avatars/${fileName}`); 
+        });
 
-    } catch (error) {
-        await fs.unlink(tmpUpload)
-        throw RequestError(401, "Not authorized")
-    }
+    const resultUpload = path.join(avaDir, fileName);
+
+    await fs.rename(tempUpload, resultUpload);
+
+    const avatarURL = path.join("avatars", fileName);
+
+    await User.findByIdAndUpdate(_id, { avatarURL });
+
+    res.status(200).json({avatarURL})
 }
 
 module.exports = updateAvatar

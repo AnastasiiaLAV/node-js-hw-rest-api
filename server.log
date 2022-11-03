@@ -50,3 +50,6 @@ GET /api/auth/subscrip 2022-10-28_10:04:03
 GET /api/auth/subscrip 2022-10-28_10:04:08
 GET /api/auth/subscrip 2022-10-28_10:05:27
 PATCH /api/auth/subscrip/635c0dbbd82a3c1c226bde3a 2022-10-28_10:17:10
+GET /api/auth/avatars 2022-11-01_10:35:17
+GET /api/auth/avatars 2022-11-01_10:35:54
+GET /api/auth/avatars 2022-11-01_10:39:31
