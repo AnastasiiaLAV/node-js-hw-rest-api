@@ -37,6 +37,11 @@ const userSchema = new Schema({
         default: "",
     },
 
+    avatarURL: {
+        type: String,
+        required: true,
+    }
+
 }, {versionKey:false, timeseries:true})
 
 userSchema.post("save", handlerSaveError)
