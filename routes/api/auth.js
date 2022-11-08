@@ -23,5 +23,8 @@ router.patch('/subscrip', userCurrent, validateBody(schemas.subscriptionSchema),
 
 router.patch('/avatars', userCurrent, upload.single("avatar"), ctrlWrapp(ctrl.updateAvatar))
 
+router.get('/verify/:verificationToken', )
+
+router.post('/verify/', )
 
 module.exports = router;
