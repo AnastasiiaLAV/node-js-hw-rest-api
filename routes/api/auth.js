@@ -32,9 +32,4 @@ router.patch('/avatars', userCurrent, upload.single("avatar"), ctrlWrapp(ctrl.up
 router.get("/logout", userCurrent, ctrlWrapp(ctrl.logout))
 
 
-
-
-
-
-
 module.exports = router;

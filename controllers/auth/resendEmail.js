@@ -3,7 +3,6 @@ const {User} = require('../../models/user')
 const {RequestError, sendMail, verifyEmailAndSendMail} = require("../../helpers")
 
 
-
 const resendEmail = async(req, res)=>{
     const {email} = req.body
 
